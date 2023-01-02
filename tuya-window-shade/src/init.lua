@@ -150,11 +150,11 @@ local function level_event_arrived(device, level)
 	if type(level) ~= "number" then
 		window_shade_val = "unknown"
 		level = 50
-	elseif level == 0 then
+	elseif level < 5 then
 		window_shade_val = "closed"
-	elseif level == 100 then 
+	elseif level > 95 then 
 		window_shade_val = "open"
-	elseif level > 0 and level < 100 then
+	elseif level > 5 and level < 95 then
 		window_shade_val = "partially open"
 	else
 		window_shade_val = "unknown"
